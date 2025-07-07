@@ -1,6 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
-<%@ page import="java.util.*,
-                 org.jivesoftware.openfire.XMPPServer,
+<%@ page import="org.jivesoftware.openfire.XMPPServer,
                  org.jivesoftware.util.*,
                  org.jivesoftware.openfire.plugin.PresencePlugin"
     errorPage="error.jsp"
@@ -10,7 +9,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
 <%
-    PresencePlugin plugin = (PresencePlugin)XMPPServer.getInstance().getPluginManager().getPlugin("presence");
+    PresencePlugin plugin = (PresencePlugin)XMPPServer.getInstance().getPluginManager().getPluginByName("Presence Service").orElseThrow();
 
     // Get parameters
     boolean save = request.getParameter("save") != null;

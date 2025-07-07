@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2008 Jive Software, 2024 Ignite Realtime Foundation. All rights reserved.
+ * Copyright (C) 2004-2008 Jive Software, 2024-2025 Ignite Realtime Foundation. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -67,7 +67,7 @@ public class PresenceStatusServlet extends HttpServlet {
     public void init(ServletConfig servletConfig) throws ServletException {
         super.init(servletConfig);
         plugin =
-                (PresencePlugin) XMPPServer.getInstance().getPluginManager().getPlugin("presence");
+                (PresencePlugin) XMPPServer.getInstance().getPluginManager().getPluginByName("Presence Service").orElseThrow();
         xmlProvider = new XMLPresenceProvider();
         imageProvider = new ImagePresenceProvider(this);
         textProvider = new TextPresenceProvider();

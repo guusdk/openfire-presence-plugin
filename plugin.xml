@@ -6,8 +6,9 @@
     <description>Exposes presence information through HTTP.</description>
     <author>Jive Software</author>
     <version>${project.version}</version>
-    <date>2024-09-12</date>
-    <minServerVersion>4.1.1</minServerVersion>
+    <date>2025-07-07</date>
+    <minServerVersion>4.4.0</minServerVersion>
+    <minJavaVersion>11</minJavaVersion>
     
     <adminconsole>		
         <tab id="tab-server">
